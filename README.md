@@ -2,6 +2,6 @@
 Lessons 
 
 # To Do List
-- [ ] Create To Do List In Markdown
+- [x] Create To Do List In Markdown
 - [] TBA
 ---
