@@ -19,5 +19,5 @@ rect(playX, playY, playWidth, playHeight);
 rect(backwindX, imageY, imageWidth, imageHeight);
 rect(suffleX, suffleY, suffleWidth, suffleHeight);
 rect(reapeatX, reapeatY, reapeatWidth, reapeatHeight);
-rect(imageX, imageY, imageWidth, imageHeight);
-rect(imageX, imageY, imageWidth, imageHeight);
+rect(pervisoeX, imageY, imageWidth, imageHeight);
+rect(nextX, imageY, imageWidth, imageHeight);
