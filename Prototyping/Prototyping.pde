@@ -6,105 +6,105 @@ println(displayWidth, displayHeight);
 int appWidth = displayWidth;
 int appHeight = displayHeight;
 //
-float stopX = appWidth * ;
-float stopY = appHeight * ;
-float stopWidth = appWidth * ;
-float stopHeight = appHeight * ;
+float stopX = appWidth * 1.2/20.8;
+float stopY = appHeight * 1.4/15;
+float stopWidth = appWidth * 1.2/20.8;
+float stopHeight = appHeight * 1.4/15;
 //
-float lyricsX = appWidth * 1/4;
-float lyricsY = appHeight * 1/4;
-float lyricsWidth = appWidth * 1/2;
-float lyricsHeight = appHeight * 1/2;
+float lyricsX = appWidth * 1.5/20.8;
+float lyricsY = appHeight * 1.3/15;
+float lyricsWidth = appWidth * 1.5/20.8;
+float lyricsHeight = appHeight * 1.3/15;
 //
-float aboutthesongX = appWidth * 1/4;
-float aboutthesongY = appHeight * 1/4;
-float aboutthesongWidth = appWidth * 1/2;
-float aboutthesongHeight = appHeight * 1/2;
+float aboutthesongX = appWidth * 1.3/20.8;
+float aboutthesongY = appHeight * 1.3/15;
+float aboutthesongWidth = appWidth * 1.3/20.8;
+float aboutthesongHeight = appHeight * 1.3/15;
 // 
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float imageX = appWidth * 20.8;
+float imageY = appHeight * 15;
+float imageWidth = appWidth * 20.8;
+float imageHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float artistX = appWidth * 20.8;
+float artistY = appHeight * 15;
+float artistWidth = appWidth * 20.8;
+float artistHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float trackX = appWidth * 20.8;
+float trackY = appHeight * 15;
+float trackWidth = appWidth * 20.8;
+float trackHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float totaltimeX = appWidth * 20.8;
+float totaltimeY = appHeight * 15;
+float totaltimeWidth = appWidth * 20.8;
+float totaltimeHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float timeclipseX = appWidth * 20.8;
+float timeclipseY = appHeight * 15;
+float timeclipseWidth = appWidth * 20.8;
+float timeclipseHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float rewindX = appWidth * 20.8;
+float rewindY = appHeight * 15;
+float rewindWidth = appWidth * 20.8;
+float rewindHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float fastfowardX = appWidth * 20.8;
+float fastfowardY = appHeight * 15;
+float fastfowardWidth = appWidth * 20.8;
+float fastfowardHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float backfowardX = appWidth * 20.8;
+float backfowardY = appHeight * 15;
+float backfowardWidth = appWidth * 20.8;
+float backfowardHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float pauseX = appWidth * 20.8;
+float pauseY = appHeight * 15;
+float pauseWidth = appWidth * 20.8;
+float pauseHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float playX = appWidth * 20.8;
+float playY = appHeight * 15;
+float playWidth = appWidth * 20.8;
+float playHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float backwindX = appWidth * 20.8;
+float backwindY = appHeight * 15;
+float backwindWidth = appWidth * 20.8;
+float backwindHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float suffleX = appWidth * 20.8;
+float suffleY = appHeight * 15;
+float suffleWidth = appWidth * 20.8;
+float suffleHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float reapeatX = appWidth * 20.8;
+float reapeatY = appHeight * 15;
+float reapeatWidth = appWidth * 20.8;
+float reapeatHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float pervisoeX = appWidth * 20.8;
+float pervisoeY = appHeight * 15;
+float pervisoeWidth = appWidth * 20.8;
+float imageHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float pervisoeX = appWidth * 20.8;
+float pervisoeY = appHeight * 15;
+float pervisoeWidth = appWidth * 20.8;
+float pervisoeHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float nextX = appWidth * 20.8;
+float nextY = appHeight * 15;
+float nextWidth = appWidth * 20.8;
+float nextHeight = appHeight * 15;
 //
-float imageX = appWidth * 1/4;
-float imageY = appHeight * 1/4;
-float imageWidth = appWidth * 1/2;
-float imageHeight = appHeight * 1/2;
+float imageX = appWidth * 20.8;
+float imageY = appHeight * 15;
+float imageWidth = appWidth * 20.8;
+float imageHeight = appHeight * 15;
 //
 rect(stopX, stopY, stopWidth, stopHeight);
 rect(lyricsX, lyricsY, lyricsWidth, lyricsHeight);
