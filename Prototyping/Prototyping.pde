@@ -61,6 +61,51 @@ float imageY = appHeight * 1/4;
 float imageWidth = appWidth * 1/2;
 float imageHeight = appHeight * 1/2;
 //
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
+float imageX = appWidth * 1/4;
+float imageY = appHeight * 1/4;
+float imageWidth = appWidth * 1/2;
+float imageHeight = appHeight * 1/2;
+//
 rect(stopX, stopY, stopWidth, stopHeight);
 rect(lyricsX, lyricsY, lyricsWidth, lyricsHeight);
 rect(aboutthesongX, aboutthesongY, aboutthesongWidth, aboutthesongHeight);
