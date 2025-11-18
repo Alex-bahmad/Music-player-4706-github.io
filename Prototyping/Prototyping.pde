@@ -48,8 +48,8 @@ float timeeclipseHeight = appHeight * 3.7/17;
 //
 float backrewindX = appWidth * 5.2/20.8;
 float backrewindY = appHeight * 13/17;
-float backrewindWidth = appWidth * 11/20.8;
-float backrewindHeight = appHeight * 11/17;
+float backrewindWidth = appWidth * 1/20.8;
+float backrewindHeight = appHeight * 1/17;
 //
 float fastfowardX = appWidth * 15/20.8;
 float fastfowardY = appHeight * 13/17;
@@ -74,12 +74,12 @@ float rewindHeight = appHeight * 1/17;
 float suffleX = appWidth * 20.8;
 float suffleY = appHeight * 17;
 float suffleWidth = appWidth * 20.8;
-float suffleHeight = appHeight * 17;
+float suffleHeight = appHeight * 1/17;
 //
 float reapeatX = appWidth * 20.8;
 float reapeatY = appHeight * 17;
 float reapeatWidth = appWidth * 20.8;
-float reapeatHeight = appHeight * 17;
+float reapeatHeight = appHeight * 1/17;
 
 //
 float nextX = appWidth * 17.2/20.8;
