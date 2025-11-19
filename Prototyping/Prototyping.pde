@@ -46,49 +46,43 @@ float timeeclipseY = appHeight * 9/17;
 float timeeclipseWidth = appWidth * 3/20.8;
 float timeeclipseHeight = appHeight * 3.7/17;
 //
-float backrewindX = appWidth * 5.2/20.8;
-float backrewindY = appHeight * 13/17;
+float backrewindX = appWidth * 5/20.8;
+float backrewindY = appHeight * 14/17;
 float backrewindWidth = appWidth * 1/20.8;
 float backrewindHeight = appHeight * 1/17;
 //
-float fastfowardX = appWidth * 15/20.8;
-float fastfowardY = appHeight * 13/17;
+float fastfowardX = appWidth * 17/20.8;
+float fastfowardY = appHeight * 14/17;
 float fastfowardWidth = appWidth * 1/20.8;
 float fastfowardHeight = appHeight * 1/17;
 //
-float pauseX = appWidth * 11/20.8;
-float pauseY = appHeight * 13/17;
+float pauseX = appWidth * 13/20.8;
+float pauseY = appHeight * 14/17;
 float pauseWidth = appWidth * 1/20.8;
 float pauseHeight = appHeight * 1/17;
 //
-float playX = appWidth * 11/20.8;
-float playY = appHeight * 13.2/17;
+float playX = appWidth * 15/20.8;
+float playY = appHeight * 14/17;
 float playWidth = appWidth * 1/20.8;
 float playHeight = appHeight * 1/17;
 //
-float rewindX = appWidth * 9.2/20.8;
-float rewindY = appHeight * 13/17;
-float rewindWidth = appWidth * 1/20.8;
-float rewindHeight = appHeight * 1/17;
-//
-float suffleX = appWidth * 20.8;
-float suffleY = appHeight * 17;
-float suffleWidth = appWidth * 20.8;
+float suffleX = appWidth * 11/20.8;
+float suffleY = appHeight * 14/17;
+float suffleWidth = appWidth * 1/20.8;
 float suffleHeight = appHeight * 1/17;
 //
-float reapeatX = appWidth * 20.8;
-float reapeatY = appHeight * 17;
-float reapeatWidth = appWidth * 20.8;
+float reapeatX = appWidth * 9/20.8;
+float reapeatY = appHeight * 14/17;
+float reapeatWidth = appWidth * 1/20.8;
 float reapeatHeight = appHeight * 1/17;
-
 //
 float nextX = appWidth * 17.2/20.8;
-float nextY = appHeight * 13/17;
+float nextY = appHeight * 14/17;
 float nextWidth = appWidth * 1/20.8;
 float nextHeight = appHeight * 1/17;
 //
 float stopX = appWidth * 7/20.8;
-float stopY = appHeight * 13/17;
+float stopY = appHeight * 14/17;
 float stopWidth = appWidth * 1/20.8;
 float stopHeight = appHeight * 1/17;
 //
@@ -101,11 +95,9 @@ rect(artistX, artistY, artistWidth, artistHeight);
 rect(trackX, trackY, trackWidth, trackHeight);
 rect(totaltimeX, totaltimeY, totaltimeWidth, totaltimeHeight);
 rect(timeeclipseX, timeeclipseY, timeeclipseWidth, timeeclipseHeight);
-rect(rewindX, rewindY, rewindWidth, rewindHeight);
 rect(fastfowardX, fastfowardY, fastfowardWidth, fastfowardHeight);
 rect(pauseX, pauseY, pauseWidth, pauseHeight);
 rect(playX, playY, playWidth, playHeight);
 rect(backrewindX, backrewindY, backrewindWidth, backrewindHeight);
 rect(suffleX, suffleY, suffleWidth, suffleHeight);
 rect(reapeatX, reapeatY, reapeatWidth, reapeatHeight);
-rect(nextX, imageY, nextWidth, imageHeight);
