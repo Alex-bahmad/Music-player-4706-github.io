@@ -3,5 +3,5 @@
 */
 //
 //Display
-fullScreen(); //Landscape
-size(); //Portrait
+//fullScreen(); //Landscape
+size(500, 700); //Portrait
