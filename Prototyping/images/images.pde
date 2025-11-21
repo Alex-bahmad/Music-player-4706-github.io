@@ -17,7 +17,7 @@ float RDivHeight = appHeight*7/17;
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
 String upArrow = "../../";
-String folder = "Lesson Dependancies Folder/Images/"; //**Akward
+String folder = "Images Dependancy/Images/"; //**Akward
 String R = "R";
 String fileExtensionJPG = ".jpg";
 String RPathway1 = upArrow + folder + R + fileExtensionJPG;
