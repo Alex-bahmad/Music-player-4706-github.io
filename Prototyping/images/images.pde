@@ -3,8 +3,8 @@
 */
 //
 //Display
-//fullScreen(); //Landscape
-size(700, 900); //Portrait
+fullScreen(); //Landscape
+//size(700, 900); //Portrait
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; // height
 println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
@@ -20,17 +20,18 @@ String upArrow = "../../";
 String folder = "Lesson Dependancies Folder/Images/"; //**Akward
 String R = "R";
 String fileExtensionJPG = ".jpg";
-String RPathway1 = upArrow + folders + R + filerExtensionJPG;
+String RPathway1 = upArrow + folder + R + fileExtensionJPG;
 //println("R Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
 //
-PImage image = loadImage( imagePathway1 );
+PImage image = loadImage( RPathway1 );
 int imageWidth1 = 3840; //hardcoded
 int imageHeight1 = 2160; //hardcoded
 //aspect ratio
-float imageAspectRatio_GreaterOne = () ? : ;
+//float imageAspectRatio_GreaterOne = () ? : ;
 //
 //DIV
 rect( RDivX, RDivY, RDivWidth, RDivHeight );
 //
-image(image1, DivX, DivY, imageWidth1, imageHeight1 );
+image(image, RDivX, RDivY, RDivWidth, RDivHeight );
+//image(image1, DivX, DivY, imageWidth1, imageHeight1 );
