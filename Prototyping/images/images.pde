@@ -27,9 +27,10 @@ String RPathway1 = upArrow + folder + R + fileExtensionJPG;
 PImage image = loadImage( RPathway1 );
 int imageWidth1 = 3840; //hardcoded
 int imageHeight1 = 2160; //hardcoded
-//aspect ratio
-//float imageAspectRatio_GreaterOne = () ? : ;
-//
+//Aspect Ratio
+float imageAspectRatio_LessOne = ( imageWidth1 >= imageHeight1 ) ? imageWidth1/imageHeight1 : ; //Ternary Operator
+//Hardcoded 
+println(imageAspectRatio_LessOne);
 //DIV
 rect( RDivX, RDivY, RDivWidth, RDivHeight );
 //
