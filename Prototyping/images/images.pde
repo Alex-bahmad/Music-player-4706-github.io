@@ -25,16 +25,19 @@ String RPathway1 = upArrow + folder + R + fileExtensionJPG;
 //Image Loading & Aspect Ratio
 //
 PImage image = loadImage( RPathway1 );
-int imageWidth1 = 3840; //hardcoded
-int imageHeight1 = 2160; //hardcoded
+int RWidth1 = 3840; //hardcoded
+int RHeight1 = 2160; //hardcoded
 //Aspect Ratio
-float imageAspectRatio_GreaterOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1); //Ternary Operator
+float RAspectRatio_GreaterOne = ( RWidth1 >= RHeight1 ) ? float(RWidth1)/float(RHeight1) : float(RHeight1)/float(RWidth1); //Ternary Operator
 //Hardcoded LessOne Aspect Ratio
 //How to maek image bigger or smaller
 //ERROR: truncating, casting
-println("Aspect Ratio >1", imageAspectRatio_GreaterOne, "testing for Decimals, formula", imageWidth1/imageHeight1);
+println("Aspect Ratio >1", RAspectRatio_GreaterOne, "testing for Decimals, formula", RWidth1/RHeight1);
+//println("after casting added, aspect Ration >1:", imageAspectRation_greaterOne
 //Algorithm Decisions (choice)
 //Aspect Ratio
+float RWidthAdjusted1 = RDivWidth;
+float RHeightAdjusted = ( RWidth1 >= RDivWidth ) ? RWidthAdjusted1 / RAspectRatio_GreaterOne : RWidthAdjusted1 * RAspectRatio_GreaterOne ; //Ternary Operator
 /*
 imageWidth1
 imageDivWidth
@@ -45,5 +48,8 @@ if () {} else {} //End If Aspect Ratio
 //DIV
 rect( RDivX, RDivY, RDivWidth, RDivHeight );
 //
-image(image, RDivX, RDivY, RDivWidth, RDivHeight );
+image(RDivX, RDivY, RDivWidth, RDivHeight );
 //image(image1, DivX, DivY, imageWidth1, imageHeight1 );
+
+//float imageWidthAdjusted1 = imageDivWidth;
+//float imageHeightAdjusted = ( imageWidth >= imageDivWidth ) ? imageWidthAdjusted1 / imageAspectRatio_greaterOne : imageWidthAdjusted1 * imageAspectRatio_GreaterOne; //Ternary Operator
