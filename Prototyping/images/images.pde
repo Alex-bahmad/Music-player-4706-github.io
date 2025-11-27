@@ -48,7 +48,7 @@ if () {} else {} //End If Aspect Ratio
 //DIV
 rect( RDivX, RDivY, RDivWidth, RDivHeight );
 //
-image(RDivX, RDivY, RDivWidth, RDivHeight );
+image( image ,RDivX, RDivY, RDivWidth, RDivHeight );
 //image(image1, DivX, DivY, imageWidth1, imageHeight1 );
 
 //float imageWidthAdjusted1 = imageDivWidth;
