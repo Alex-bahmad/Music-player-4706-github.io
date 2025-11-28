@@ -48,8 +48,8 @@ if () {} else {} //End If Aspect Ratio
 //DIV
 rect( RDivX, RDivY, RDivWidth, RDivHeight );
 //
-image( image ,RDivX, RDivY, RDivWidth, RDivHeight );
-//image(image1, DivX, DivY, imageWidth1, imageHeight1 );
-
+//image( image ,RDivX, RDivY, RDivWidth, RDivHeight );
+//image(image, imageDivX, imageDivY, imageWidth1, imageHeight1 );
+image( R, RDivX, RDivY, RWidthAdjusted1, RHeightAdjusted );
 //float imageWidthAdjusted1 = imageDivWidth;
 //float imageHeightAdjusted = ( imageWidth >= imageDivWidth ) ? imageWidthAdjusted1 / imageAspectRatio_greaterOne : imageWidthAdjusted1 * imageAspectRatio_GreaterOne; //Ternary Operator
