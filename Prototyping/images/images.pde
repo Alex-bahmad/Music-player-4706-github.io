@@ -48,8 +48,36 @@ if () {} else {} //End If Aspect Ratio
 //DIV
 rect( RDivX, RDivY, RDivWidth, RDivHeight );
 //
+int indexWhile = 0;
+
+// Keep shrinking until BOTH width and height fit correctly
+while (RWidthAdjusted1 > RDivWidth || RHeightAdjusted > RDivHeight) {
+
+    println("Iteration:", indexWhile);
+
+    // Infinite loop protection
+    if (indexWhile >= 10000) {
+        println("ERROR: infinite loop at iteration:", indexWhile);
+        break;
+    }
+
+    // SHRINK SCALE STEP (adaptive & smooth)
+    float scale = 0.99;       // shrink by 1% per loop
+    RWidthAdjusted1  *= scale;
+    RHeightAdjusted  *= scale;
+
+    println("Adjusted:", RWidthAdjusted1, RHeightAdjusted);
+
+    indexWhile++;
+}
+
+
+
+
+ 
+//
 //image( image ,RDivX, RDivY, RDivWidth, RDivHeight );
 //image(image, imageDivX, imageDivY, imageWidth1, imageHeight1 );
-image( R, RDivX, RDivY, RWidthAdjusted1, RHeightAdjusted );
+image( image, RDivX, RDivY, RWidthAdjusted1, RHeightAdjusted );
 //float imageWidthAdjusted1 = imageDivWidth;
 //float imageHeightAdjusted = ( imageWidth >= imageDivWidth ) ? imageWidthAdjusted1 / imageAspectRatio_greaterOne : imageWidthAdjusted1 * imageAspectRatio_GreaterOne; //Ternary Operator
