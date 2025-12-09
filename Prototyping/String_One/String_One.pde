@@ -23,14 +23,27 @@ String titletoma = "tomates!";
 //Fonts from OS
 //String[] fontList = PFont.list(); //To list all fonts available on system
 //printArray(fontList);
-int fontSize = 35; //Entire Program
+float fontSize = appHeight; //Entire Program
 PFont titleFont; ///FOnt VAr name
-String TimesNewRomanPSBoldItalicMT = "TimesNewRomanPSBoldItalicMT";
-
-titleFont = createFont (TimesNewRomanPSBoldItalicMT, fontSize);
+String Bahnschrift = "Bahnschrift";
+float BahnschriftFontSize = 64.0;
+titleFont = createFont (Bahnschrift, fontSize);
+textSize(BahnschriftFontSize);
 //Tools / Create FOnt / Find Font / Do Not Press "OK",known conflict between load
 //
 rect ( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+println(fontSize, Bahnschrift, titleFont); //inspect pfont-type varaible for
+//fontSize = 30.0;
+println("Font Size:", fontSize );
+/* Aspect Ratio Manipulations ( chnages to variables)
+- choose Aspect Ratio that must be mutliplied: fontSize/titleHeight
+- Rewriting fontSize with formulae
+*/
+float BahnschriftAspectRatio = fontSize / stringDivHeight;
+fontSize = stringDivHeight+BahnschriftAspectRatio;
+println("Bahnschrift Aspect Ratio;", BahnschriftAspectRatio);
+println(); //skip a line
+//float YuGothicUISemibold = fontSizeYuGothicUISemibold / stringDivHeight;
 //
 color purpleInk = #AACAF4; //HexiDecimal
 textFont(titleFont, fontSize); //see vaiabkle note
