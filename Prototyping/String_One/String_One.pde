@@ -10,21 +10,29 @@ println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t
 //
 //Population
 float[] stringDivWidth = new float[3];
-float stringDivX1 = appWidth*5/20.8;
-float stringDivY1 = appHeight*1/17;
-stringDivWidth[1] = appWidth*10/20.8;
-float stringDivHeight1 = appHeight*1/10; //** make smaller to test Landscape 7/17 for normal annd 1/10 for titlel
-float stringDivX2 = stringDivX1;
-float stringDivY2 = appHeight*1/17;
-stringDivWidth[2] = appWidth*10/20.8;
-float stringDivHeight2 = stringDivHeight1;
-float stringDivX3 = stringDivX1;
-float stringDivY3 = appHeight*1/17;
-stringDivWidth[3] = appWidth*10/20.8;
-float stringDivHeight3 = stringDivHeight1;
+float[] stringDivX = new float[3];
+float[] stringDivY = new float[3];
+float[] stringDivHeight = new float[3]; //** make smaller to test Landscape 7/17 for normal annd 1/10 for titlel
+//Width Array
+stringDivWidth[0] = appWidth*6/20.8;
+stringDivWidth[1] = appWidth*4/20.8;
+stringDivWidth[2] = appWidth * 8/20.8;
+//X Array
+stringDivX[0] = appWidth * 5/20.8;
+stringDivX[1] = appWidth * 5/20.8;
+stringDivX[2] = appWidth * 5/20.8;
+//Y Array
+stringDivY[0] = appHeight * 2/17;
+stringDivY[1] = appHeight * 8/17;
+stringDivY[2] = appHeight * 14/17;
+//Height Array
+stringDivHeight[0] = appHeight * 5/17;
+stringDivHeight[1] = appHeight * 5/17;
+stringDivHeight[2] = appHeight * 5/17;
+
 //
 //string, text, liyeral
-String title = "tomates!";
+String title = "tomates";
 //Note: DIV to "see" variables
 //println("start of console"); //error; in case CONSOLE memory not enough
 //Fonts from OS
@@ -38,10 +46,9 @@ titleFont = createFont (Bahnschrift, fontSize);
 textSize(BahnschriftFontSize);
 //Tools / Create FOnt / Find Font / Do Not Press "OK",known conflict between load
 //
-for ( int i=o; i<3; i++)
-rect (title, ( stringDivX[i]), stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
-rect (title, stringDivX2, stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
-rect (title, stringDivX3, stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
+for ( int i=0; i<3; i++)
+rect (stringDivX[i], stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
+
 println(fontSize, Bahnschrift, titleFont); //inspect pfont-type varaible for
 //fontSize = 30.0;
 println("Font Size:", fontSize );
@@ -49,8 +56,8 @@ println("Font Size:", fontSize );
  - choose Aspect Ratio that must be mutliplied: fontSize/titleHeight
  - Rewriting fontSize with formulae
  */
-float BahnschriftAspectRatio = fontSize / stringDivHeight1;
-fontSize = stringDivHeight1+BahnschriftAspectRatio;
+float BahnschriftAspectRatio = fontSize / stringDivHeight[0];
+fontSize = stringDivHeight[0]+BahnschriftAspectRatio;
 println("Bahnschrift Aspect Ratio;", BahnschriftAspectRatio);
 println(); //skip a line
 //float YuGothicUISemibold = fontSizeYuGothicUISemibold / stringDivHeight;
@@ -72,7 +79,7 @@ for ( int i=0; i<=3; i++ ) {
   textFont(titleFont, fontSize); //see vaiabkle note
  } //End WHILE Error Check Text-wrap
 } //End FOR Loop, font SIze CHeck in DIVS
-while ( textWidth( title ) > stringDivWidth1 ) {
+while ( textWidth( title ) > stringDivWidth[0] ) {
   //ERROR :infinite loop, requires exit() and println()
   fontSize *= constrantDecrease; //Assognment Operator //FontSize = fontSize*0.99
   textFont(titleFont, fontSize); //see vaiabkle note
@@ -82,9 +89,9 @@ while ( textWidth( title ) > stringDivWidth1 ) {
 //
 textFont(titleFont, fontSize); //see vaiabkle note
 //fill(purpleInk); //ink grey scale 0-255
-text(title, stringDivX1, stringDivY1, stringDivWidth1, stringDivHeight1 );
-text(title, stringDivX2, stringDivY2, stringDivWidth2, stringDivHeight2 );
-text(title, stringDivX3, stringDivY3, stringDivWidth3, stringDivHeight3 );
+text(title, stringDivX[0], stringDivY[0], stringDivWidth[0], stringDivHeight[0] );
+text(title, stringDivX[1], stringDivY[1], stringDivWidth[1], stringDivHeight[1] );
+text(title, stringDivX[2], stringDivY[2], stringDivWidth[2], stringDivHeight[2] );
 fill(resetInk);
 //
 //End Program
