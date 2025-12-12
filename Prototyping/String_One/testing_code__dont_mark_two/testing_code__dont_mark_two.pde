@@ -1,34 +1,48 @@
 /* String
  */
-//
-//Display
-fullScreen(); //Landscape
-//size(700, 900); //Portrait
-int appWidth = displayWidth; //width
-int appHeight = displayHeight; // height
-println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
-//
-//Population
-float[] stringDivWidth = new float[3];
-float[] stringDivX = new float[3];
-float[] stringDivY = new float[3];
-float[] stringDivHeight = new float[3]; //** make smaller to test Landscape 7/17 for normal annd 1/10 for titlel
-//Width Array
-stringDivWidth[0] = appWidth*6/20.8;
-stringDivWidth[1] = appWidth*4/20.8;
-stringDivWidth[2] = appWidth * 8/20.8;
-//X Array
-stringDivX[0] = appWidth * 5/20.8;
-stringDivX[1] = appWidth * 5/20.8;
-stringDivX[2] = appWidth * 5/20.8;
-//Y Array
-stringDivY[0] = appHeight * 2/17;
-stringDivY[1] = appHeight * 8/17;
-stringDivY[2] = appHeight * 14/17;
-//Height Array
-stringDivHeight[0] = appHeight * 5/17;
-stringDivHeight[1] = appHeight * 5/17;
-stringDivHeight[2] = appHeight * 5/17;
+
+void setup() {
+  // Display
+  fullScreen(); // Landscape
+  // size(700, 900); // Portrait
+  int appWidth = displayWidth; // width
+  int appHeight = displayHeight; // height
+  println("Display VARS:", 
+          "appWidth:" + appWidth, 
+          "appHeight:" + appHeight, 
+          "\n\t\t\t\t\t\t\tFullScreendisplayWidth:" + displayWidth, 
+          "displayHeight:" + displayHeight, 
+          "width:" + width, 
+          "height:" + height);
+
+  // Population
+  float[] stringDivWidth = new float[3];
+  float[] stringDivX = new float[3];
+  float[] stringDivY = new float[3];
+  float[] stringDivHeight = new float[3]; // ** make smaller to test Landscape 7/17 for normal and 1/10 for title
+
+  // Width Array
+  stringDivWidth[0] = appWidth * 6 / 20.8;
+  stringDivWidth[1] = appWidth * 4 / 20.8;
+  stringDivWidth[2] = appWidth * 8 / 20.8;
+
+  // X Array
+  stringDivX[0] = appWidth * 5 / 20.8;
+  stringDivX[1] = appWidth * 5 / 20.8;
+  stringDivX[2] = appWidth * 5 / 20.8;
+
+  // Y Array
+  stringDivY[0] = appHeight * 2 / 17;
+  stringDivY[1] = appHeight * 8 / 17;
+  stringDivY[2] = appHeight * 14 / 17;
+
+  // Height Array
+  stringDivHeight[0] = appHeight * 5 / 17;
+}
+
+void draw() {
+  // Add your drawing logic here if needed
+}
 
 //
 //string, text, liyeral
