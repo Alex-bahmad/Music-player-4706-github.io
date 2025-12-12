@@ -14,21 +14,21 @@ float[] stringDivX = new float[3];
 float[] stringDivY = new float[3];
 float[] stringDivHeight = new float[3]; //** make smaller to test Landscape 7/17 for normal annd 1/10 for titlel
 //Width Array
-stringDivWidth[0] = appWidth*6/20.8;
-stringDivWidth[1] = appWidth*4/20.8;
-stringDivWidth[2] = appWidth * 8/20.8;
+stringDivWidth[0] = appWidth*6/20.8; //6/20.8
+stringDivWidth[1] = appWidth * 4/20.8; //4/20.8
+stringDivWidth[2] = appWidth * 8/20.8; //8/20.8
 //X Array
-stringDivX[0] = appWidth * 5/20.8;
-stringDivX[1] = appWidth * 5/20.8;
-stringDivX[2] = appWidth * 5/20.8;
+stringDivX[0] = appWidth * 5/20.8; //5/20.8
+stringDivX[1] = appWidth * 5/20.8; //5/20.8
+stringDivX[2] = appWidth * 5/20.8; //5/20.8
 //Y Array
-stringDivY[0] = appHeight * 2/17;
-stringDivY[1] = appHeight * 8/17;
-stringDivY[2] = appHeight * 14/17;
+stringDivY[0] = appHeight * 2/17; //2/17
+stringDivY[1] = appHeight * 7/17; //8/17
+stringDivY[2] = appHeight * 12/17; //14/17
 //Height Array
-stringDivHeight[0] = appHeight * 5/17;
-stringDivHeight[1] = appHeight * 5/17;
-stringDivHeight[2] = appHeight * 5/17;
+stringDivHeight[0] = appHeight * 3.5/17; //5/17
+stringDivHeight[1] = appHeight * 3.5/17; //5/17
+stringDivHeight[2] = appHeight * 3.5/17; //5/17
 
 //
 //string, text, liyeral
@@ -72,7 +72,7 @@ textAlign (CENTER, CENTER);
 textFont(titleFont, fontSize); //see vaiabkle note
 float constrantDecrease = 0.99;  //99% of origonal or 1% decrease
 //FOR Loop Error,copy = paste three times
-for ( int i=0; i<=3; i++ ) {
+for ( int i=0; i<=2; i++ ) {
   while ( textWidth( title ) > stringDivWidth[i] ) {
   //ERROR :infinite loop, requires exit() and println()
   fontSize *= constrantDecrease; //Assognment Operator //FontSize = fontSize*0.99
