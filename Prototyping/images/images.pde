@@ -1,5 +1,5 @@
 /* Aspect Ratio: Bike Only Demonstration
-- Old Man
+- R
 */
 //
 //Display
