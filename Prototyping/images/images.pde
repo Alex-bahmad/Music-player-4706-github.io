@@ -12,7 +12,7 @@ println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t
 //Population
 float RDivX = appWidth*5/20.8;
 float RDivY = appHeight*1/17;
-float RDivWidth = appWidth*10/20.8;
+float RDivWidth = appWidth*10/20.8; 
 float RDivHeight = appHeight*7/17; //** make smaller to test Landscape
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
@@ -70,11 +70,15 @@ while (RWidthAdjusted1 > RDivWidth || RHeightAdjusted > RDivHeight) {
 
     indexWhile++;
 }
+// Determine axis to center based on adjusted image vs div
+if (RWidthAdjusted1 < RDivWidth) {
+    // Width does not fill, center horizontally
+    RDivX += (RDivWidth - RWidthAdjusted1) / 2; // Adds half the difference of the div width in reference to the image width
+} else { 
+  // Height does not fill, center vertically
+    RDivY += (RDivHeight - RHeightAdjusted) / 2; // Adds half the difference of the div height in reference to the image height
+}
 
-
-
-
- 
 //
 //image( image ,RDivX, RDivY, RDivWidth, RDivHeight );
 //image(image, imageDivX, imageDivY, imageWidth1, imageHeight1 );
