@@ -10,10 +10,10 @@ int appHeight = displayHeight; // height
 println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
-float RDivX = appWidth*5/20.8;
-float RDivY = appHeight*1/17;
-float RDivWidth = appWidth*10/20.8; 
-float RDivHeight = appHeight*7/17; //** make smaller to test Landscape
+float RlokX = appWidth*5/20.8;
+float RlokY = appHeight*1/17;
+float RlokWidth = appWidth*10/20.8; 
+float RlokHeight = appHeight*7/17; //** make smaller to test Landscape
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
 String upArrow = "../../";
@@ -36,8 +36,8 @@ println("Aspect Ratio >1", RAspectRatio_GreaterOne, "testing for Decimals, formu
 //println("after casting added, aspect Ration >1:", imageAspectRation_greaterOne
 //Algorithm Decisions (choice)
 //Aspect Ratio
-float RWidthAdjusted1 = RDivWidth;
-float RHeightAdjusted = ( RWidth1 >= RDivWidth ) ? RWidthAdjusted1 / RAspectRatio_GreaterOne : RWidthAdjusted1 * RAspectRatio_GreaterOne ; //Ternary Operator
+float RWidthAdjusted1 = RlokWidth;
+float RHeightAdjusted = ( RWidth1 >= RlokWidth ) ? RWidthAdjusted1 / RAspectRatio_GreaterOne : RWidthAdjusted1 * RAspectRatio_GreaterOne ; //Ternary Operator
 /*
 imageWidth1
 imageDivWidth
@@ -46,12 +46,12 @@ imageDivWidth
 if () {} else {} //End If Aspect Ratio
 */
 //DIV
-rect( RDivX, RDivY, RDivWidth, RDivHeight );
+rect( RlokX, RlokY, RlokWidth, RlokHeight );
 //
 int indexWhile = 0;
 
 // Keep shrinking until BOTH width and height fit correctly
-while (RWidthAdjusted1 > RDivWidth || RHeightAdjusted > RDivHeight) {
+while (RWidthAdjusted1 > RlokWidth || RHeightAdjusted > RlokHeight) {
 
     println("Iteration:", indexWhile);
 
@@ -71,17 +71,17 @@ while (RWidthAdjusted1 > RDivWidth || RHeightAdjusted > RDivHeight) {
     indexWhile++;
 }
 // Determine axis to center based on adjusted image vs div
-if (RWidthAdjusted1 < RDivWidth) {
+if (RWidthAdjusted1 < RlokWidth) {
     // Width does not fill, center horizontally
-    RDivX += (RDivWidth - RWidthAdjusted1) / 2; // Adds half the difference of the div width in reference to the image width
+    RlokX += (RlokWidth - RWidthAdjusted1) / 2; // Adds half the difference of the div width in reference to the image width
 } else { 
   // Height does not fill, center vertically
-    RDivY += (RDivHeight - RHeightAdjusted) / 2; // Adds half the difference of the div height in reference to the image height
+    RlokY += (RlokHeight - RHeightAdjusted) / 2; // Adds half the difference of the div height in reference to the image height
 }
 
 //
 //image( image ,RDivX, RDivY, RDivWidth, RDivHeight );
 //image(image, imageDivX, imageDivY, imageWidth1, imageHeight1 );
-image( image, RDivX, RDivY, RWidthAdjusted1, RHeightAdjusted );
+image( image, RlokX, RlokY, RWidthAdjusted1, RHeightAdjusted );
 //float imageWidthAdjusted1 = imageDivWidth;
 //float imageHeightAdjusted = ( imageWidth >= imageDivWidth ) ? imageWidthAdjusted1 / imageAspectRatio_greaterOne : imageWidthAdjusted1 * imageAspectRatio_GreaterOne; //Ternary Operator
