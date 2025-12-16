@@ -62,10 +62,10 @@ println("Bahnschrift Aspect Ratio;", BahnschriftAspectRatio);
 println(); //skip a line
 //float YuGothicUISemibold = fontSizeYuGothicUISemibold / stringDivHeight;
 //Drawing Text
-color purpleInk = #AACAF4; //HexiDecimal
-color whiteInk = #FFFFFF; //Grey Scale is 255
-color resetInk = whiteInk;
-fill(purpleInk);
+color RedInk = #AACAF4; //HexiDecimal
+color BlueInk = #FFFFFF; //Grey Scale is 255
+color resetInk = BlueInk;
+fill(RedInk);
 //grey scale 0-255
 textAlign (CENTER, CENTER);
 //WHILE Error Check
