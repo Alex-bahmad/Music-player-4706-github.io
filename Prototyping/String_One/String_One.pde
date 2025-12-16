@@ -9,26 +9,26 @@ int appHeight = displayHeight; // height
 println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
-float[] stringDivWidth = new float[3];
-float[] stringDivX = new float[3];
-float[] stringDivY = new float[3];
-float[] stringDivHeight = new float[3]; //** make smaller to test Landscape 7/17 for normal annd 1/10 for titlel
+float[] stringlokWidth = new float[3];
+float[] stringlokX = new float[3];
+float[] stringlokY = new float[3];
+float[] stringlokHeight = new float[3]; //** make smaller to test Landscape 7/17 for normal annd 1/10 for titlel
 //Width Array
-stringDivWidth[0] = appWidth*6/20.8; //6/20.8
-stringDivWidth[1] = appWidth * 4/20.8; //4/20.8
-stringDivWidth[2] = appWidth * 8/20.8; //8/20.8
-//X Array
-stringDivX[0] = appWidth * 5/20.8; //5/20.8
-stringDivX[1] = appWidth * 5/20.8; //5/20.8
-stringDivX[2] = appWidth * 5/20.8; //5/20.8
+stringlokWidth[0] = appWidth*6/20.8; //6/20.8
+stringlokWidth[1] = appWidth * 4/20.8; //4/20.8
+stringlokWidth[2] = appWidth * 8/20.8; //8/20.8
+//X Array 
+stringlokX[0] = appWidth * 5/20.8; //5/20.8
+stringlokX[1] = appWidth * 5/20.8; //5/20.8
+stringlokX[2] = appWidth * 5/20.8; //5/20.8
 //Y Array
-stringDivY[0] = appHeight * 2/17; //2/17
-stringDivY[1] = appHeight * 7/17; //8/17
-stringDivY[2] = appHeight * 12/17; //14/17
+stringlokY[0] = appHeight * 2/17; //2/17
+stringlokY[1] = appHeight * 7/17; //8/17
+stringlokY[2] = appHeight * 12/17; //14/17
 //Height Array
-stringDivHeight[0] = appHeight * 3.5/17; //5/17
-stringDivHeight[1] = appHeight * 3.5/17; //5/17
-stringDivHeight[2] = appHeight * 3.5/17; //5/17
+stringlokHeight[0] = appHeight * 3.5/17; //5/17
+stringlokHeight[1] = appHeight * 3.5/17; //5/17
+stringlokHeight[2] = appHeight * 3.5/17; //5/17
 
 //
 //string, text, liyeral
@@ -47,7 +47,7 @@ textSize(BahnschriftFontSize);
 //Tools / Create FOnt / Find Font / Do Not Press "OK",known conflict between load
 //
 for ( int i=0; i<3; i++)
-rect (stringDivX[i], stringDivY[i], stringDivWidth[i], stringDivHeight[i] );
+rect (stringlokX[i], stringlokY[i], stringlokWidth[i], stringlokHeight[i] );
 
 println(fontSize, Bahnschrift, boxFont); //inspect pfont-type varaible for
 //fontSize = 30.0;
@@ -56,8 +56,8 @@ println("Font Size:", fontSize );
  - choose Aspect Ratio that must be mutliplied: fontSize/titleHeight
  - Rewriting fontSize with formulae
  */
-float BahnschriftAspectRatio = fontSize / stringDivHeight[0];
-fontSize = stringDivHeight[0]+BahnschriftAspectRatio;
+float BahnschriftAspectRatio = fontSize / stringlokHeight[0];
+fontSize = stringlokHeight[0]+BahnschriftAspectRatio;
 println("Bahnschrift Aspect Ratio;", BahnschriftAspectRatio);
 println(); //skip a line
 //float YuGothicUISemibold = fontSizeYuGothicUISemibold / stringDivHeight;
@@ -73,13 +73,13 @@ textFont(boxFont, fontSize); //see vaiabkle note
 float constrantDecrease = 0.99;  //99% of origonal or 1% decrease
 //FOR Loop Error,copy = paste three times
 for ( int i=0; i<=2; i++ ) {
-  while ( textWidth( box ) > stringDivWidth[i] ) {
+  while ( textWidth( box ) > stringlokWidth[i] ) {
   //ERROR :infinite loop, requires exit() and println()
   fontSize *= constrantDecrease; //Assognment Operator //FontSize = fontSize*0.99
   textFont(boxFont, fontSize); //see vaiabkle note
  } //End WHILE Error Check Text-wrap
 } //End FOR Loop, font SIze CHeck in DIVS
-while ( textWidth( box ) > stringDivWidth[0] ) {
+while ( textWidth( box ) > stringlokWidth[0] ) {
   //ERROR :infinite loop, requires exit() and println()
   fontSize *= constrantDecrease; //Assognment Operator //FontSize = fontSize*0.99
   textFont(boxFont, fontSize); //see vaiabkle note
@@ -89,9 +89,9 @@ while ( textWidth( box ) > stringDivWidth[0] ) {
 //
 textFont(boxFont, fontSize); //see vaiabkle note
 //fill(purpleInk); //ink grey scale 0-255
-text(box, stringDivX[0], stringDivY[0], stringDivWidth[0], stringDivHeight[0] );
-text(box, stringDivX[1], stringDivY[1], stringDivWidth[1], stringDivHeight[1] );
-text(box, stringDivX[2], stringDivY[2], stringDivWidth[2], stringDivHeight[2] );
+text(box, stringlokX[0], stringlokY[0], stringlokWidth[0], stringlokHeight[0] );
+text(box, stringlokX[1], stringlokY[1], stringlokWidth[1], stringlokHeight[1] );
+text(box, stringlokX[2], stringlokY[2], stringlokWidth[2], stringlokHeight[2] );
 fill(resetInk);
 //
 //End Program
