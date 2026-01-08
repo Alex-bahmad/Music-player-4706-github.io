@@ -16,7 +16,7 @@
 // - Java Libraries simply require the 'import' declaration
 //
 
-// Library - Minim
+// Library  Minim
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -34,7 +34,7 @@ int currentSong = 0; // start at zero
 
 void setup() {
   // Display
-  size(700, 500); // width, height
+  size(900, 500); // width, height
   int appWidth = width;
   int appHeight = height;
 
@@ -44,18 +44,17 @@ void setup() {
   // Folder structure for music and sound
   String upArrow = "../../"; 
   String musicFolder = "Music/"; 
-  String normalFolder = "normal/"; 
   String soundEffectsFolder = "Sound Effects/"; 
   String fileExtension_mp3 = ".mp3";
 
   // Song names
   String songName1 = "Cycles";
-  String songName2 = "Beats";
-  String songName3 = "Groove";
+  String songName2 = "Beat_Your_Competition";
+  String songName3 = "Eureka";
   String soundEffect1 = "Car_Door_Closing";
 
   // Full paths
-  String musicDirectory = upArrow + musicFolder + normalFolder;
+  String musicDirectory = upArrow + musicFolder;
   String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder;
 
   // Load songs
@@ -64,7 +63,7 @@ void setup() {
   playList[2] = minim.loadFile(musicDirectory + songName3 + fileExtension_mp3);
 
   // Load sound effect
-  soundEffects[0] = minim.loadFile(soundEffectsDirectory + soundEffect1 + fileExtension_mp3);
+  soundEffects[0] = minim.loadFile(soundEffectsDirectory + fileExtension_mp3);
 
   // Check if music and sound loaded properly
   if (playList[0] == null || playList[1] == null || playList[2] == null || soundEffects[0] == null) {
@@ -80,7 +79,7 @@ void setup() {
 }
 
 void draw() {
-  // Empty - can be used for visuals if needed
+  // Empty  can be used for visuals if needed
 }
 
 void mousePressed() {
