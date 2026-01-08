@@ -51,11 +51,11 @@ void setup() {
   String songName1 = "Cycles";
   String songName2 = "Beat_Your_Competition";
   String songName3 = "Eureka";
-  String soundEffect1 = "Car_Door_Closing";
+  String soundEffect1 = "Car_Door_Closing (1)";
 
   // Full paths
   String musicDirectory = upArrow + musicFolder;
-  String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder;
+  String soundEffectsDirectory = upArrow + musicFolder;
 
   // Load songs
   playList[0] = minim.loadFile(musicDirectory + songName1 + fileExtension_mp3);
@@ -63,7 +63,8 @@ void setup() {
   playList[2] = minim.loadFile(musicDirectory + songName3 + fileExtension_mp3);
 
   // Load sound effect
-  soundEffects[0] = minim.loadFile(soundEffectsDirectory + fileExtension_mp3);
+  println(soundEffectsDirectory);
+  soundEffects[0] = minim.loadFile(soundEffectsDirectory + soundEffect1 + fileExtension_mp3);
 
   // Check if music and sound loaded properly
   if (playList[0] == null || playList[1] == null || playList[2] == null || soundEffects[0] == null) {
