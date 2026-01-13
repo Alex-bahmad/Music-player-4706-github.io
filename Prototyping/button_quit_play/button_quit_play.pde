@@ -19,7 +19,8 @@ int appWidth, appHeight;
 // Close button variables
 float closeX, closeY, closeWidth, closeHeight;
 float closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2;
-float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;
+float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;ftgyvbngtgbyhuvgbyhngbyhnugbyhnubhnujmgbyhnubyhnujgb hnjbyhnujbyhnujbhnujmgyhnujgbyhnutgbyhngbyhnugbyhnugbyhnugbyhnugbyhnugbyhnugbyhnubynujmgbyhnugbyhnugbyhnu
+
 
 // Play button variables
 float playDivX, playDivY, playDivWidth, playDivHeight;
