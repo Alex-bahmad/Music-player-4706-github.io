@@ -16,9 +16,9 @@
 int appWidth, appHeight;
 
 // Close button variables
-float closeX, closeY, closeWidth, closeHeight;
-float closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2;
-float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;
+float xOutX, xOutY, xOutWidth, xOutHeight;
+float xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2;
+float xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2;
 
 // Play button variables
 float playDivX, playDivY, playDivWidth, playDivHeight;
@@ -27,11 +27,11 @@ float playSymbolX2, playSymbolY2;
 float playSymbolX3, playSymbolY3;
 //
 Boolean playButton;
-Boolean closeButton;
+Boolean xOutButton;
 //
 color resetBackground, resetInk;
 color playColourBackground, playColourSymbol, playColourBackgroundHover, playColourSymbolHover;
-color closeColourBackground, closeColourBackgroundActivated;
+color xOutColourBackground, xOutColourBackgroundActivated;
 //
 void setup() {
   size(600, 400);
@@ -39,18 +39,18 @@ void setup() {
   appHeight = height;
 
   // Close button
-  closeX = appWidth * 24.7/28.0;
-  closeY = appHeight * 1/17.0;
-  closeWidth = appWidth * 2/28.0;
-  closeHeight = appHeight * 2/17.0;
-  closelineLine1X1 = closeX + closeWidth * 1/4;
-  closelineLine1Y1 = closeY + closeHeight * 1/4;
-  closelineLine1X2 = closeX + closeWidth * 3/4;
-  closelineLine1Y2 = closeY + closeHeight * 3/4;
-  closelineLine2X1 = closeX + closeWidth * 3/4;
-  closelineLine2Y1 = closeY + closeHeight * 1/4;
-  closelineLine2X2 = closeX + closeWidth * 1/4;
-  closelineLine2Y2 = closeY + closeHeight * 3/4;
+  xOutX = appWidth * 24.7/28.0;
+  xOutY = appHeight * 1/17.0;
+  xOutWidth = appWidth * 2/28.0;
+  xOutHeight = appHeight * 2/17.0;
+  xOutlineLine1X1 = xOutX + xOutWidth * 1/4;
+  xOutlineLine1Y1 = xOutY + xOutHeight * 1/4;
+  xOutlineLine1X2 = xOutX + xOutWidth * 3/4;
+  xOutlineLine1Y2 = xOutY + xOutHeight * 3/4;
+  xOutlineLine2X1 = xOutX + xOutWidth * 3/4;
+  xOutlineLine2Y1 = xOutY + xOutHeight * 1/4;
+  xOutlineLine2X2 = xOutX + xOutWidth * 1/4;
+  xOutlineLine2Y2 = xOutY + xOutHeight * 3/4;
 
   // Play button
   playDivX = appWidth * 4/10;
@@ -65,7 +65,7 @@ void setup() {
   playSymbolY3 = playDivY + playDivHeight * 3/4;
 
   playButton = false;
-  closeButton = false;
+  xOutButton = false;
 
   // Colours
   resetBackground = #FFFFFF;
@@ -78,26 +78,26 @@ void setup() {
   playColourSymbolHover = #FFFFFF; //
 
   // Close button colours
-  closeColourBackground = #FFFFFF;
-  closeColourBackgroundActivated = #76FCFF;
+  xOutColourBackground = #FFFFFF;
+  xOutColourBackgroundActivated = #76FCFF;
 }
 //
 void draw() {
   background(resetBackground);
 
   //  CLOSE BUTTON
-  if (mouseX > closeX && mouseX < closeX + closeWidth &&
-    mouseY > closeY && mouseY < closeY + closeHeight) {
-    closeButton = true;
-    fill(closeColourBackgroundActivated); // hover colour
+  if (mouseX > xOutX && mouseX < xOutX + xOutWidth &&
+    mouseY > xOutY && mouseY < xOutY + xOutHeight) {
+    xOutButton = true;
+    fill(xOutColourBackgroundActivated); // hover colour
   } else {
-    closeButton = false;
-    fill(closeColourBackground); // normal colour
+    xOutButton = false;
+    fill(xOutColourBackground); // normal colour
   }
   stroke(playColourSymbol);
-  rect(closeX, closeY, closeWidth, closeHeight);
-  line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
-  line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
+  rect(xOutX, xOutY, xOutWidth, xOutHeight);
+  line(xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2);
+  line(xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2);
 
   // play BUTTON
   if (mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight) {
@@ -121,7 +121,7 @@ void mousePressed() {
   if (playButton) {
     println("play music");
   }
-  if (closeButton) {
+  if (xOutButton) {
     println("close app");
   }
 }
