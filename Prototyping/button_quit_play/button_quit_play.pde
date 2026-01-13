@@ -75,7 +75,7 @@ void setup() {
   playColourBackground = #76E2FF; //
   playColourBackgroundHover = #A6F0FF; //
   playColourSymbol = #76FCFF;
-  playColourSymbolHover = #FFFFFF; // 
+  playColourSymbolHover = #FFFFFF; //
 
   // Close button colours
   closeColourBackground = #FFFFFF;
@@ -85,9 +85,9 @@ void setup() {
 void draw() {
   background(resetBackground);
 
-  //  CLOSE BUTTON 
+  //  CLOSE BUTTON
   if (mouseX > closeX && mouseX < closeX + closeWidth &&
-      mouseY > closeY && mouseY < closeY + closeHeight) {
+    mouseY > closeY && mouseY < closeY + closeHeight) {
     closeButton = true;
     fill(closeColourBackgroundActivated); // hover colour
   } else {
@@ -99,26 +99,22 @@ void draw() {
   line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
   line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
 
-  // play BUTTON 
+  // play BUTTON
   if (mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight) {
     playButton = true;
     fill(playColourBackgroundHover); // hover thing
-    stroke(playColourSymbolHover);
+    rect(playDivX, playDivY, playDivWidth, playDivHeight);
+    fill(playColourSymbolHover); // hover thing
+    triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
   } else {
     playButton = false;
     fill(playColourBackground); // normal thing
-    stroke(playColourSymbol);
+    rect(playDivX, playDivY, playDivWidth, playDivHeight);
+    fill(playColourSymbol);
+    triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
   }
-  rect(playDivX, playDivY, playDivWidth, playDivHeight);
 
   // Draw the triangle thing
-  noStroke();
-  fill(playButton ? playColourSymbolHover : playColourSymbol);
-  triangle(
-    playSymbolX1, playSymbolY1,
-    playSymbolX2, playSymbolY2,
-    playSymbolX3, playSymbolY3
-  );
 }
 //
 void mousePressed() {
