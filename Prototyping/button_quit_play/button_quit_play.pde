@@ -7,7 +7,6 @@
  
  - What to copy and paste
  - Quit & Play DIV
- 
  */
 //
 //Library - Minim
@@ -19,8 +18,7 @@ int appWidth, appHeight;
 // Close button variables
 float closeX, closeY, closeWidth, closeHeight;
 float closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2;
-float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;ftgyvbngtgbyhuvgbyhngbyhnugbyhnubhnujmgbyhnubyhnujgb hnjbyhnujbyhnujbhnujmgyhnujgbyhnutgbyhngbyhnugbyhnugbyhnugbyhnugbyhnugbyhnugbyhnubynujmgbyhnugbyhnugbyhnu
-
+float closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2;
 
 // Play button variables
 float playDivX, playDivY, playDivWidth, playDivHeight;
@@ -32,28 +30,23 @@ Boolean playButton;
 Boolean closeButton;
 //
 color resetBackground, resetInk;
-color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+color playColourBackground, playColourSymbol, playColourBackgroundHover, playColourSymbolHover;
+color closeColourBackground, closeColourBackgroundActivated;
 //
 void setup() {
-  //display
   size(600, 400);
-  //fullScreen();
   appWidth = width;
   appHeight = height;
-  //
-  //Population
 
   // Close button
   closeX = appWidth * 24.7/28.0;
   closeY = appHeight * 1/17.0;
   closeWidth = appWidth * 2/28.0;
   closeHeight = appHeight * 2/17.0;
-  // line 1
   closelineLine1X1 = closeX + closeWidth * 1/4;
   closelineLine1Y1 = closeY + closeHeight * 1/4;
   closelineLine1X2 = closeX + closeWidth * 3/4;
   closelineLine1Y2 = closeY + closeHeight * 3/4;
-  // line 2
   closelineLine2X1 = closeX + closeWidth * 3/4;
   closelineLine2Y1 = closeY + closeHeight * 1/4;
   closelineLine2X2 = closeX + closeWidth * 1/4;
@@ -64,7 +57,6 @@ void setup() {
   playDivY = appHeight * 4.5/10;
   playDivWidth = appWidth * 2/10;
   playDivHeight = appHeight * 1/10;
-
   playSymbolX1 = playDivX + playDivWidth * 1/4;
   playSymbolY1 = playDivY + playDivHeight * 1/4;
   playSymbolX2 = playSymbolX1 + playDivWidth * 1/2;
@@ -74,66 +66,70 @@ void setup() {
 
   playButton = false;
   closeButton = false;
-  //colour Population
-  color black = 0; //grey scale, much smaller color, 256 bits
-  color white = #FFFFFF; //grey scale
-  //canvas: default background and ink
-  resetBackground = white;
-  resetInk = black;
-  //button colours
 
-  color red = #76FCFF;
-  color purple = #76FFD3;
-  color yellow = #76E2FF;
-  color grayScale = 256/2; //example gray scale smmall memory
-  color gray = #76C5FF; // exapmple gray scale, large memory
-  playColourBackground = yellow;
-  playColourSymbol = red;
-  playColourBackgroundActivated = yellow;
-  playColourSymbolActivated = red;
-} //End setup
+  // Colours
+  resetBackground = #FFFFFF;
+  resetInk = #000000;
+
+  // Play button colours
+  playColourBackground = #76E2FF; //
+  playColourBackgroundHover = #A6F0FF; //
+  playColourSymbol = #76FCFF;
+  playColourSymbolHover = #FFFFFF; // 
+
+  // Close button colours
+  closeColourBackground = #FFFFFF;
+  closeColourBackgroundActivated = #76FCFF;
+}
 //
 void draw() {
-  //println("My mouse is", mouseX, mouseY);
-  //button hoverover
+  background(resetBackground);
+
+  //  CLOSE BUTTON 
+  if (mouseX > closeX && mouseX < closeX + closeWidth &&
+      mouseY > closeY && mouseY < closeY + closeHeight) {
+    closeButton = true;
+    fill(closeColourBackgroundActivated); // hover colour
+  } else {
+    closeButton = false;
+    fill(closeColourBackground); // normal colour
+  }
+  stroke(playColourSymbol);
   rect(closeX, closeY, closeWidth, closeHeight);
   line(closelineLine1X1, closelineLine1Y1, closelineLine1X2, closelineLine1Y2);
   line(closelineLine2X1, closelineLine2Y1, closelineLine2X2, closelineLine2Y2);
-  if ( mouseX>playDivX && mouseY<playDivX+playDivHeight) {
 
-    // Close button hover
-    if ( mouseX > closeX && mouseX < closeX + closeWidth &&
-      mouseY > closeY && mouseY < closeY + closeHeight ) {
-      closeButton = true;
-    } else {
-      closeButton = false;
-    }
+  // play BUTTON 
+  if (mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight) {
+    playButton = true;
+    fill(playColourBackgroundHover); // hover thing
+    stroke(playColourSymbolHover);
+  } else {
+    playButton = false;
+    fill(playColourBackground); // normal thing
+    stroke(playColourSymbol);
+  }
+  rect(playDivX, playDivY, playDivWidth, playDivHeight);
 
-    // Play button hover
-    if ( mouseX > playDivX && mouseX < playDivX + playDivWidth &&
-      mouseY > playDivY && mouseY < playDivY + playDivHeight ) {
-      playButton = true;
-      fill(playColourBackground);
-      // Draw play button
-      rect(playDivX, playDivY, playDivWidth, playDivHeight);
-      triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
-    } else {
-      playButton = false;
-    }
-  } //End draw
+  // Draw the triangle thing
+  noStroke();
+  fill(playButton ? playColourSymbolHover : playColourSymbol);
+  triangle(
+    playSymbolX1, playSymbolY1,
+    playSymbolX2, playSymbolY2,
+    playSymbolX3, playSymbolY3
+  );
 }
-
 //
 void mousePressed() {
-  if (playButton == true ) {
+  if (playButton) {
     println("play music");
   }
-  if (closeButton == true ) {
+  if (closeButton) {
     println("close app");
   }
-}//End Mouse Pressed
+}
 //
 void keyPressed() {
-} //End Key Pressed
+}
 //
-//End MAIN Program
