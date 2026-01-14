@@ -38,7 +38,7 @@ void setup() {
   appWidth = width;
   appHeight = height;
 
-  // Close button
+  // xOut button
   xOutX = appWidth * 24.7/28.0;
   xOutY = appHeight * 1/17.0;
   xOutWidth = appWidth * 2/28.0;
@@ -85,16 +85,14 @@ void setup() {
 void draw() {
   background(resetBackground);
 
-  //  CLOSE BUTTON
-  if (mouseX > xOutX && mouseX < xOutX + xOutWidth &&
-    mouseY > xOutY && mouseY < xOutY + xOutHeight) {
+  //  Xout BUTTON
+  if (mouseX > xOutX && mouseX < xOutX + xOutWidth && mouseY > xOutY && mouseY < xOutY + xOutHeight) {
     xOutButton = true;
     fill(xOutColourBackgroundActivated); // hover colour
   } else {
     xOutButton = false;
     fill(xOutColourBackground); // normal colour
   }
-  stroke(playColourSymbol);
   rect(xOutX, xOutY, xOutWidth, xOutHeight);
   line(xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2);
   line(xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2);
