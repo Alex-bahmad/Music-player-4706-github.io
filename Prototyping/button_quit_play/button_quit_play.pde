@@ -32,6 +32,7 @@ Boolean xOutButton;
 color resetBackground, resetInk;
 color playColourBackground, playColourSymbol, playColourBackgroundHover, playColourSymbolHover;
 color xOutColourBackground, xOutColourBackgroundActivated;
+Boolean nightMode=false;
 //
 void setup() {
   size(600, 400);
@@ -125,5 +126,8 @@ void mousePressed() {
 }
 //
 void keyPressed() {
+  noloop();
+  exit();
+  println("final line of mousepressed and frinisges draw()");
 }
 //
