@@ -25,15 +25,18 @@ float playDivX, playDivY, playDivWidth, playDivHeight;
 float playSymbolX1, playSymbolY1;
 float playSymbolX2, playSymbolY2;
 float playSymbolX3, playSymbolY3;
-//
+
+// Booleans
 Boolean playButton;
 Boolean xOutButton;
-//
+Boolean nightMode = false;
+
+// Colours
 color resetBackground, resetInk;
-color playColourBackground, playColourSymbol, playColourBackgroundHover, playColourSymbolHover;
-color xOutColourBackground, xOutColourBackgroundActivated;
-Boolean nightMode=false;
-//
+color playColourBackground, playColourSymbol;
+color playColourBackgroundHover, playColourSymbolHover;
+color xOutColourBackground, xOutColourBackgroundHover;
+
 void setup() {
   size(600, 400);
   appWidth = width;
@@ -68,66 +71,82 @@ void setup() {
   playButton = false;
   xOutButton = false;
 
-  // Colours
-  resetBackground = #FFFFFF;
-  resetInk = #000000;
-
-  // Play button colours
-  playColourBackground = #76E2FF; //
-  playColourBackgroundHover = #A6F0FF; //
-  playColourSymbol = #76FCFF;
-  playColourSymbolHover = #FFFFFF; //
-
-  // Close button colours
-  xOutColourBackground = #FFFFFF;
-  xOutColourBackgroundActivated = #76FCFF;
+  setColors();
 }
-//
+
 void draw() {
   background(resetBackground);
 
-  //  Xout BUTTON
+  // Xout BUTTON
   if (mouseX > xOutX && mouseX < xOutX + xOutWidth && mouseY > xOutY && mouseY < xOutY + xOutHeight) {
     xOutButton = true;
-    fill(xOutColourBackgroundActivated); // hover colour
+    fill(xOutColourBackgroundHover);
   } else {
     xOutButton = false;
-    fill(xOutColourBackground); // normal colour
+    fill(xOutColourBackground);
   }
   rect(xOutX, xOutY, xOutWidth, xOutHeight);
   line(xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2);
   line(xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2);
 
   // play BUTTON
-  if (mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight) {
+  if (mouseX > playDivX && mouseX < playDivX + playDivWidth &&
+      mouseY > playDivY && mouseY < playDivY + playDivHeight) {
     playButton = true;
-    fill(playColourBackgroundHover); // hover thing
+    fill(playColourBackgroundHover);
     rect(playDivX, playDivY, playDivWidth, playDivHeight);
-    fill(playColourSymbolHover); // hover thing
+    fill(playColourSymbolHover);
     triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
   } else {
     playButton = false;
-    fill(playColourBackground); // normal thing
+    fill(playColourBackground);
     rect(playDivX, playDivY, playDivWidth, playDivHeight);
     fill(playColourSymbol);
     triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
   }
-
-  // Draw the triangle thing
 }
-//
+
 void mousePressed() {
   if (playButton) {
     println("play music");
   }
   if (xOutButton) {
     println("close app");
+    noLoop();
+    exit();
   }
 }
-//
+
 void keyPressed() {
-  noloop();
-  exit();
-  println("final line of mousepressed and frinisges draw()");
+  if (key == 't' || key == 'T') {
+    nightMode = !nightMode;
+    setColors();
+  }
 }
-//
+
+void setColors() {
+
+  // background stays normal 
+  resetBackground = #FFFFFF;
+  resetInk = #000000;
+
+  if (nightMode) {
+    playColourBackground = #444444;
+    playColourSymbol = #EEEEEE;
+    playColourBackgroundHover = #666666;
+    playColourSymbolHover = #FFFFFF;
+
+    // X button night mode
+    xOutColourBackground = #333333;
+    xOutColourBackgroundHover = #555555;
+  } else {
+    playColourBackground = #76E2FF;
+    playColourSymbol = #76FCFF;
+    playColourBackgroundHover = #A6F0FF;
+    playColourSymbolHover = #FFFFFF;
+
+    // X button day mode
+    xOutColourBackground = #FFFFFF;
+    xOutColourBackgroundHover = #FF0000;
+  }
+}
