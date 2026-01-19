@@ -90,8 +90,7 @@ void draw() {
   line(xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2);
 
   // play BUTTON
-  if (mouseX > playDivX && mouseX < playDivX + playDivWidth &&
-      mouseY > playDivY && mouseY < playDivY + playDivHeight) {
+  if (mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight) {
     playButton = true;
     fill(playColourBackgroundHover);
     rect(playDivX, playDivY, playDivWidth, playDivHeight);
