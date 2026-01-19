@@ -87,7 +87,3 @@ void mousePressed() {
 void keyPressed() {
   //  
 }
-
-void quitButton() {
-  // 
-}
