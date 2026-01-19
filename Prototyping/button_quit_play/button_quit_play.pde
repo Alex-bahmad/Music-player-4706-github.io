@@ -126,7 +126,7 @@ void keyPressed() {
 
 void setColors() {
 
-  // background stays normal 
+  // normal 
   resetBackground = #FFFFFF;
   resetInk = #000000;
 
