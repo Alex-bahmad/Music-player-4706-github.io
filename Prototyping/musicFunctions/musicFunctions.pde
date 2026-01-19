@@ -37,7 +37,7 @@ color playColourBackground, playColourSymbol, playColourBackgroundActivated, pla
 color xOutColourBackground, xOutColourBackgroundActivated;
 
 void setup() {
-  fullScreen(); // teacher style fullScreen
+  fullScreen(); // 
   appWidth = displayWidth;
   appHeight = displayHeight;
 
@@ -67,7 +67,7 @@ void setup() {
   playSymbolX3 = playSymbolX1;
   playSymbolY3 = playDivY + playDivHeight * 3/4;
 
-  // Draw DIVs once (teacher style)
+  // Draw DIVs once
   rect(xOutX, xOutY, xOutWidth, xOutHeight);
   line(xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2);
   line(xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2);
@@ -77,17 +77,17 @@ void setup() {
 }
 
 void draw() {
-  // teacher's draw() is empty
+  // 
 }
 
 void mousePressed() {
-  // teacher's mousePressed() is empty
+  // 
 }
 
 void keyPressed() {
-  // teacher's keyPressed() is empty
+  //  
 }
 
 void quitButton() {
-  // teacher's quitButton() is empty
+  // 
 }
