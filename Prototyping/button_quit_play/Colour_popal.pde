@@ -3,7 +3,7 @@ void colourPopualation() {
   buildingColours();
 }//End colour popilatiion
 //
-void nightmodeVariables() {
+void nightModeVariables() {
   if (nightMode==false) {
     nightMode=true;
   } else {
@@ -12,8 +12,7 @@ void nightmodeVariables() {
 }//end night mode variables
 //couler pop
 //
-nightMode=false;
-buildingColour(); 
+
 void buildingColours() {size(600, 400);
   appWidth = width;
   appHeight = height;
@@ -59,5 +58,5 @@ void buildingColours() {size(600, 400);
 
   // Close button colours
   xOutColourBackground = #FFFFFF;
-  xOutColourBackgroundActivated = #76FCFF;
+  xOutColourBackgroundHover = #76FCFF;
 }
