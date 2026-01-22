@@ -1,89 +1,65 @@
-/* Creating Buttons - HoverOver in draw()
- - Add Minim from Sketch / Import Library / Minim
- - Display: fullScreen() v. use shorter side as a Square based on fullScreen
- - DIVs and Global Variables, includes DIV Population
- */
-//
-//Library - Minim
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
-//
-//Global Variables
-//
+/* Main Tab */
+
 int appWidth, appHeight;
+boolean nightMode = false;
+boolean playButton = false;
 
-// Close button variables
-float xOutX, xOutY, xOutWidth, xOutHeight;
-float xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2;
-float xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2;
-
-// Play button variables
+// Button positions (used by Buttons tab)
+float XOutX, XOutY, XOutWidth, XOutHeight;
 float playDivX, playDivY, playDivWidth, playDivHeight;
-float playSymbolX1, playSymbolY1;
-float playSymbolX2, playSymbolY2;
-float playSymbolX3, playSymbolY3;
-
-// Booleans
-Boolean playButton=false, xOutButton=false;
-Boolean nightMode=false;
+float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
 
 // Colors
 color resetBackground, resetInk;
-color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
-color xOutColourBackground, xOutColourBackgroundActivated;
+color playColourBackground, playColourSymbol, playColourBackgroundHover, playColourSymbolHover;
+color XOutColourBackground, XOutColourBackgroundHover;
 
 void setup() {
-  fullScreen(); // 
+  fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
 
-  // X button
-  xOutX = appWidth * 24.7/28.0;
-  xOutY = appHeight * 1/17.0;
-  xOutWidth = appWidth * 2/28.0;
-  xOutHeight = appHeight * 2/17.0;
-  xOutlineLine1X1 = xOutX + xOutWidth * 1/4;
-  xOutlineLine1Y1 = xOutY + xOutHeight * 1/4;
-  xOutlineLine1X2 = xOutX + xOutWidth * 3/4;
-  xOutlineLine1Y2 = xOutY + xOutHeight * 3/4;
-  xOutlineLine2X1 = xOutX + xOutWidth * 3/4;
-  xOutlineLine2Y1 = xOutY + xOutHeight * 1/4;
-  xOutlineLine2X2 = xOutX + xOutWidth * 1/4;
-  xOutlineLine2Y2 = xOutY + xOutHeight * 3/4;
+  // Populate button positions
+  divPopulation();
+  setColors();
 
-  // Play button
-  playDivX = appWidth * 4/10;
-  playDivY = appHeight * 4.5/10;
-  playDivWidth = appWidth * 2/10;
-  playDivHeight = appHeight * 1/10;
-  playSymbolX1 = playDivX + playDivWidth * 1/4;
-  playSymbolY1 = playDivY + playDivHeight * 1/4;
-  playSymbolX2 = playSymbolX1 + playDivWidth * 1/2;
-  playSymbolY2 = playDivY + playDivHeight * 1/2;
-  playSymbolX3 = playSymbolX1;
-  playSymbolY3 = playDivY + playDivHeight * 3/4;
-
-  // Draw DIVs once
-  rect(xOutX, xOutY, xOutWidth, xOutHeight);
-  line(xOutlineLine1X1, xOutlineLine1Y1, xOutlineLine1X2, xOutlineLine1Y2);
-  line(xOutlineLine2X1, xOutlineLine2Y1, xOutlineLine2X2, xOutlineLine2Y2);
-
-  rect(playDivX, playDivY, playDivWidth, playDivHeight);
-  triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
+  // Setup music
+  musicSetup();
 }
 
 void draw() {
-  // 
+  background(resetBackground);
+  hoverOver_draw();
 }
 
 void mousePressed() {
-  // 
+  // XOut button
+  if (mouseX > XOutX && mouseX < XOutX + XOutWidth && mouseY > XOutY && mouseY < XOutY + XOutHeight) {
+    XOut();
+  }
+  
+  // Play button
+  if (mouseX > playDivX && mouseX < playDivX + playDivWidth && mouseY > playDivY && mouseY < playDivY + playDivHeight) {
+    togglePlay();
+  }
 }
 
 void keyPressed() {
-  //  
+  // Dark mode toggle
+  if (key == 'T' || key == 't') {
+    nightMode = !nightMode;
+    setColors();
+  }
+  
+  // XOut shortcut
+  if (key == 'Q' || key == 'q') {
+    XOut();
+  }
+}
+
+// XOut function
+void XOut() {
+  println("Exiting Sketch");
+  noLoop();
+  exit();
 }
