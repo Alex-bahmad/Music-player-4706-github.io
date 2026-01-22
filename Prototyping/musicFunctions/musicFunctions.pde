@@ -4,7 +4,7 @@ int appWidth, appHeight;
 boolean nightMode = false;
 boolean playButton = false;
 
-// Button positions (used by Buttons tab)
+// Button positions 
 float XOutX, XOutY, XOutWidth, XOutHeight;
 float playDivX, playDivY, playDivWidth, playDivHeight;
 float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
@@ -45,13 +45,13 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  // Dark mode toggle
+  // Dark mode 
   if (key == 'T' || key == 't') {
     nightMode = !nightMode;
     setColors();
   }
   
-  // XOut shortcut
+  // XOut 
   if (key == 'Q' || key == 'q') {
     XOut();
   }
