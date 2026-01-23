@@ -1,4 +1,7 @@
-/* Main Tab */
+/* Main Tab */ //this is my temp code
+int numberOfSoundEffects = 1; // we just need one effect for XOut
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
+//this is my temp code
 
 int appWidth, appHeight;
 boolean nightMode = false;
@@ -76,6 +79,12 @@ if (key == 'N' || key == 'n') {
 
 // XOut function
 void XOut() {
+  // Play XOut sound effect
+if (soundEffects[0] != null) {
+  soundEffects[0].rewind(); // start from beginning
+  soundEffects[0].play();
+}
+//this is my temp code
   println("Exiting Sketch");
   noLoop();
   exit();
