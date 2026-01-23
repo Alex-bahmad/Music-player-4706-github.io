@@ -39,7 +39,7 @@ void setup() {
   String fileExtension_mp3 = ".mp3";
 
   // List all songs
-  String[] songNames = {"Cycles", "Eureka", "Groove"};
+  String[] songNames = {"Cycles", "Eureka", "Beat_Your_Competition"};
 
   // Load all songs into the playlist
   for (int i = 0; i < numberOfSong; i++) {
