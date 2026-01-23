@@ -1,54 +1,80 @@
-/* Library Notes
-  - File / Sketch / Import Library / Manage Libraries
-  - We use Minim for Sound and Sound Effects
-  - Able to Google-search libraries to make your project easier
-  - Documentation: https://code.compartmental.net/minim/
-  - Specific Class: https://code.compartmental.net/minim/audioplayer_class_audioplayer.html
-  - Specific Class: https://code.compartmental.net/minim/audiometadata_class_audiometadata.html
-  
-  ** You are now able to research any Processing-Java Library ... or Any Java Library from the internet **
-  - Processing-Java Libraries must be installed into the IDE
-  - Java Libraries simply require the 'import' declaration
-*/
-//Library - Minim
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
-//lowkirkenuiely
-//Global Varaibles
-Minim minim; //initates entire class
-int numberOfSong = 3; //Best Practice
-int numberOfSoundEffects = 1; //Best Practice
-AudioPlayer[] playList = new AudioPlayer[ numberOfSong ];
-AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
-int currentSong = numberOfSong - numberOfSong; //ZERO, math Property
-//
-//Display
+
+
 //fullScreen(); //Landscape
-size(700, 900); //Portrait
-int appWidth = width; //width
-int appHeight = height; // height
+//size(700, 900); //Portrait
+//int appWidth = displayWidth; //width
+//int appHeight = displayHeight; // height
 //
 //Music Loading - STRUCTURED Review
-minim = new Minim(this);
-String upArrow = "../../";
-String MusicFolder = "Music/"; //developer Specifitc
-String normalFolder = "normal/"; //developer Specifitc
-String songName1 = "Cycles";
-String fileExtension_mp3 = ".mp3";
+//minim = new Minim(this);
+//String upArrow = "../../";
+//String MusicFolder = "Music/"; //developer Specific
+//String songName1 = "Cycles";
+//String fileExtension_mp3 = ".mp3";
 //
-String musicDirectory = upArrow + MusicFolder; //concatenation
-String file = musicDirectory + songName1 + fileExtension_mp3;
-println("Music Pathway", musicDirectory);
-println("full Music File Pathway", file);
-//println("Full Music File Pathway", file) "Pathway", musicDirectory);
-//
-playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling and Library installed, sletch / import Library 
-//
-println("Did the music and sound load properly");
-printArray(playList);
+//String musicDirectory = upArrow + MusicFolder;
+//String file = musicDirectory + songName1 + fileExtension_mp3;
+//println("Music Pathway", musicDirectory);
+//println("full Music File Pathway", file);
+//playList[ currentSong ] = minim.loadFile( file );
+//println("Did the music and sound load properly");
+//printArray(playList);
 
-//deal with null
+
+
+import ddf.minim.*;
+
+Minim minim;
+int numberOfSong = 3;
+AudioPlayer[] playList = new AudioPlayer[numberOfSong];
+int currentSong = 0;
+
+void setup() {
+  size(700, 900); // or fullScreen();
+  
+  minim = new Minim(this);
+
+  String upArrow = "../../";
+  String MusicFolder = "Music/";
+  String fileExtension_mp3 = ".mp3";
+
+  // List all songs
+  String[] songNames = {"Cycles", "Eureka", "Groove"};
+
+  // Load all songs into the playlist
+  for (int i = 0; i < numberOfSong; i++) {
+    String filePath = upArrow + MusicFolder + songNames[i] + fileExtension_mp3;
+    println("Loading song: " + filePath);
+    playList[i] = minim.loadFile(filePath);
+
+    if (playList[i] == null) {
+      println("Error: Song " + i + " not loaded!");
+    }
+  }
+  
+  println("All songs loaded:");
+  printArray(playList);
+}
+
+void togglePlay() {
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+  } else {
+    playList[currentSong].rewind();
+    playList[currentSong].play();
+  }
+}
+
+void nextSong() {
+  // Stop current song if playing
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+    playList[currentSong].rewind();
+  }
+
+  // Move to next song
+  currentSong++;
+  if (currentSong >= numberOfSong) currentSong = 0;
+
+  playList[currentSong].play();
+}
