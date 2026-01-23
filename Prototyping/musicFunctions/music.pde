@@ -74,9 +74,9 @@ void nextSong() {
   println("Next song: " + currentSong);
 }
 
-// Go to previous song
+// Go to previous song  jwiwfjiwfji
 void previousSong() {
-  // Stop current song if playing
+  // Pause current song if it's playing
   if (playList[currentSong].isPlaying()) {
     playList[currentSong].pause();
     playList[currentSong].rewind();
@@ -86,6 +86,7 @@ void previousSong() {
   currentSong--;
   if (currentSong < 0) currentSong = numberOfSongs - 1;
 
+  // Play the previous song
   playList[currentSong].play();
-  println("Previous song: " + currentSong);
+  println("Now playing song index: " + currentSong);
 }

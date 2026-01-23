@@ -60,6 +60,11 @@ void keyPressed() {
   if (key == 'P' || key == 'p') {
     togglePlay();
   }
+// Go to previous song with B key this is temp code
+if (key == 'B' || key == 'b') {
+  previousSong();
+}
+//this is temp code
 
  // Skip to next song with N key
 if (key == 'N' || key == 'n') {
@@ -75,3 +80,4 @@ void XOut() {
   noLoop();
   exit();
 }
+//efbef
