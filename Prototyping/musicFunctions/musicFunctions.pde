@@ -45,7 +45,6 @@ void mousePressed() {
 }
 
 void keyPressed() {
-
   // Dark mode
   if (key == 'D' || key == 'd') {
     nightMode = !nightMode;
@@ -61,6 +60,12 @@ void keyPressed() {
   if (key == 'P' || key == 'p') {
     togglePlay();
   }
+
+ // Skip to next song with N key
+if (key == 'N' || key == 'n') {
+  nextSong();
+}
+
 }
 
 
