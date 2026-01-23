@@ -45,17 +45,24 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  // Dark mode 
-  if (key == 'T' || key == 't') {
+
+  // Dark mode
+  if (key == 'D' || key == 'd') {
     nightMode = !nightMode;
     setColors();
   }
-  
-  // XOut 
+
+  // XOut
   if (key == 'Q' || key == 'q') {
     XOut();
   }
+
+  // Play / Pause music
+  if (key == 'P' || key == 'p') {
+    togglePlay();
+  }
 }
+
 
 // XOut function
 void XOut() {
