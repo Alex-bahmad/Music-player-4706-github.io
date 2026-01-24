@@ -41,8 +41,11 @@ void musicSetup() {
       println("Error: Song " + i + " (" + songName[i] + ") not loaded!");
     }
     //this is temp code
-    
+    soundEffects[0] = minim.loadFile("../../Music/Car_Door_Closing.mp3");
+
+     //temp coder
   }
+   
 
   println("All songs loaded:");
   printArray(playList);
@@ -76,7 +79,7 @@ void nextSong() {
   println("Next song: " + currentSong);
 }
 
-// Go to previous song  jwiwfjiwfji
+// Go to previous song
 void previousSong() {
   // Pause current song if it's playing
   if (playList[currentSong].isPlaying()) {

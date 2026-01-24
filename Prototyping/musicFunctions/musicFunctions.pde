@@ -1,4 +1,17 @@
 /* Main Tab */ 
+// Sound effect for XOut button //temp[ codee
+int numberOfSoundEffects = 1;
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
+//
+void playXOutEffect() {
+  if (soundEffects[0] != null) {
+    soundEffects[0].rewind();
+    soundEffects[0].play();
+  }
+}
+
+//tenmp code
+
 
 int appWidth, appHeight;
 boolean nightMode = false;
@@ -75,10 +88,23 @@ if (key == 'N' || key == 'n') {
 
 
 // XOut function
+// XOut function with sound effect
 void XOut() {
-
+  // Play XOut sound effect
+  playXOutEffect();
+  
+  // Wait for the sound to finish playing
+  if (soundEffects[0] != null) {
+    while (soundEffects[0].isPlaying()) {
+      delay(10); // small delay to let sound play
+    }
+  }
+  
+  // Now exit
   println("Exiting Sketch");
   noLoop();
   exit();
 }
+
+
 //efbef
