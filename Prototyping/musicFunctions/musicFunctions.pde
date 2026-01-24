@@ -96,7 +96,7 @@ void XOut() {
   // Wait for the sound to finish playing
   if (soundEffects[0] != null) {
     while (soundEffects[0].isPlaying()) {
-      delay(10); // small delay to let sound play
+      delay(10); // delay to let sound play
     }
   }
   
