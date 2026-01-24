@@ -41,13 +41,7 @@ void musicSetup() {
       println("Error: Song " + i + " (" + songName[i] + ") not loaded!");
     }
     //this is temp code
-    // Load XOut sound effect
-String soundEffectsFolder = "Sound Effects/"; // folder where your effect is
-String soundEffect1 = "Car_Door_Closing"; // name of the effect file
-String fileEffect = upArrow + soundEffectsFolder + soundEffect1 + ".mp3";
-soundEffects[0] = minim.loadFile(fileEffect);
-
-    //this is temp code
+    
   }
 
   println("All songs loaded:");
