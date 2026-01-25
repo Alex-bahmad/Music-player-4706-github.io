@@ -73,13 +73,13 @@ void keyPressed() {
   if (key == 'P' || key == 'p') {
     togglePlay();
   }
-// Go to previous song with B key this is temp code
+// Go to previous so this is temp code
 if (key == 'B' || key == 'b') {
   previousSong();
 }
 //this is temp code
 
- // Skip to next song with N key
+ // Skip to next song with N 
 if (key == 'N' || key == 'n') {
   nextSong();
 }
