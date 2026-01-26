@@ -1,5 +1,6 @@
 /* Buttons Tab */
 
+// buttons layout 
 void divPopulation() {
   // XOut button
   XOutX = appWidth * 9/10;
@@ -49,7 +50,7 @@ void setColors() {
 
 void hoverOver_draw() {
   // XOut Button
-  if (mouseX > XOutX && mouseX < XOutX + XOutWidth &&mouseY > XOutY && mouseY < XOutY + XOutHeight) {
+  if (mouseX > XOutX && mouseX < XOutX + XOutWidth && mouseY > XOutY && mouseY < XOutY + XOutHeight) {
     fill(XOutColourBackgroundHover);
   } else {
     fill(XOutColourBackground);
@@ -58,7 +59,6 @@ void hoverOver_draw() {
 
   fill(resetInk);
   textAlign(CENTER, CENTER);
-  //textSize(XOutHeight * 0.7);
   text("X", XOutX + XOutWidth/2, XOutY + XOutHeight/2);
 
   // Play Button
