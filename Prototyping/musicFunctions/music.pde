@@ -20,7 +20,7 @@ int currentSong = 0; // Current song index
 
 // Setup music
 void musicSetup() {
-  minim = new Minim(this); // Mandatory
+  minim = new Minim(this); // 
 
   // Path setup
   String upArrow = "../../"; // Folder up navigation
