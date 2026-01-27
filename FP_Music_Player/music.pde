@@ -1,6 +1,7 @@
-/* Music Functions Tab
+/* Music Functions Tab */
+
   
-*/
+
 
 // Library - Minim
 import ddf.minim.*;
