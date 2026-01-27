@@ -12,10 +12,10 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 // Global Variables
-Minim minim; // Initiates entire class
-int numberOfSongs = 3; // Total songs in playlist
+Minim minim; // entire class
+int numberOfSongs = 3; // all songs in playlist
 AudioPlayer[] playList = new AudioPlayer[numberOfSongs]; // Playlist array
-int currentSong = 0; // Current song index
+int currentSong = 0; //  song index
 
 // Setup music
 void musicSetup() {
@@ -51,7 +51,7 @@ println("Current song index at start: " + currentSong);
   printArray(playList);
 }
 
-// Toggle Play/Pause for current song
+//  Play/Pause for cuurnt song
 void togglePlay() {
   if (playList[currentSong].isPlaying()) {
     playList[currentSong].pause();
@@ -63,7 +63,7 @@ void togglePlay() {
   }
 }
 
-// Go to next song
+// next song
 void nextSong() {
   // Stop current song if playing
   if (playList[currentSong].isPlaying()) {

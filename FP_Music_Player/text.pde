@@ -15,7 +15,7 @@ String fontName = "Bahnschrift";
 float fontSize = 64;
 
 void textSetup() {
-  // Initialize font
+  //  font
   boxFont = createFont(fontName, fontSize);
 
   // DIV dimensions
