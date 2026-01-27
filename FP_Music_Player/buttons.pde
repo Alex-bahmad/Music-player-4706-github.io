@@ -7,13 +7,14 @@ void divPopulation() {
   XOutWidth = appWidth * 1/10;
   XOutHeight = appHeight * 1/10;
 
-  // Play button bottom middle
+  // Play botton bottom middle
   playDivWidth = appWidth * 2/10;
   playDivHeight = appHeight * 1/10;
   playDivX = (appWidth - playDivWidth)/2; // center horizontally
   playDivY = appHeight * 8/10;            // near bottom
 
-  // Play symbol triangle
+  // triangle for play button
+
   playSymbolX1 = playDivX + playDivWidth * 1/4;
   playSymbolY1 = playDivY + playDivHeight * 1/4;
   playSymbolX2 = playSymbolX1 + playDivWidth * 1/2;

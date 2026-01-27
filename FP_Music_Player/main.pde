@@ -58,7 +58,7 @@ void setup() {
   RlokHeight = appHeight * 7 / 17;
 
   // Aspect ratio
-  float RAspectRatio = float(RWidth1)/float(RHeight1);
+float RAspectRatio = RWidth1 / (float)RHeight1;
   RWidthAdjusted = RlokWidth;
   RHeightAdjusted = (RWidth1 >= RHeight1) ? RWidthAdjusted / RAspectRatio : RWidthAdjusted * RAspectRatio;
 

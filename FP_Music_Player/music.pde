@@ -44,7 +44,8 @@ void musicSetup() {
 
      //temp coder
   }
-   
+   println("Number of songs loaded: " + numberOfSongs);
+println("Current song index at start: " + currentSong);
 
   println("All songs loaded:");
   printArray(playList);
