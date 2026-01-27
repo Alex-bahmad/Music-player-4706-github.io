@@ -1,0 +1,95 @@
+/* Music Functions Tab
+  
+*/
+
+// Library - Minim
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+// Global Variables
+Minim minim; // Initiates entire class
+int numberOfSongs = 3; // Total songs in playlist
+AudioPlayer[] playList = new AudioPlayer[numberOfSongs]; // Playlist array
+int currentSong = 0; // Current song index
+
+// Setup music
+void musicSetup() {
+  minim = new Minim(this); // 
+
+  // Path setup
+  String upArrow = "../../"; // Folder up navigation
+  String musicFolder = "Music/"; // Folder containing songs
+  String fileExtension = ".mp3"; // File type
+
+  // Songs to load
+  String[] songName = {"Cycles", "Eureka", "Beat_Your_Competition"};
+
+  // Load songs
+  for (int i = 0; i < numberOfSongs; i++) {
+    String filePath = upArrow + musicFolder + songName[i] + fileExtension;
+    println("Loading song: " + filePath);
+    playList[i] = minim.loadFile(filePath);
+
+    // Check if song loaded
+    if (playList[i] == null) {
+      println("Error: Song " + i + " (" + songName[i] + ") not loaded!");
+    }
+    //this is temp code
+    soundEffects[0] = minim.loadFile("../../Music/Car_Door_Closing.mp3");
+
+     //temp coder
+  }
+   
+
+  println("All songs loaded:");
+  printArray(playList);
+}
+
+// Toggle Play/Pause for current song
+void togglePlay() {
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+    println("Paused: Song " + currentSong);
+  } else {
+    playList[currentSong].rewind();
+    playList[currentSong].play();
+    println("Playing: Song " + currentSong);
+  }
+}
+
+// Go to next song
+void nextSong() {
+  // Stop current song if playing
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+    playList[currentSong].rewind();
+  }
+
+  // Move to next song
+  currentSong++;
+  if (currentSong >= numberOfSongs) currentSong = 0;
+
+  playList[currentSong].play();
+  println("Next song: " + currentSong);
+}
+
+// Go to previous song
+void previousSong() {
+  // Pause current song if it's playing
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+    playList[currentSong].rewind();
+  }
+
+  // Move to previous song
+  currentSong--;
+  if (currentSong < 0) currentSong = numberOfSongs - 1;
+
+  // Play the previous song
+  playList[currentSong].play();
+  println("Now playing song index: " + currentSong);
+}
