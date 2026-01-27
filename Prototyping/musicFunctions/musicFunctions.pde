@@ -1,4 +1,4 @@
-/* Main Tab - New Version with Background Image */
+/* Main Tab */
 
 // Background image
 PImage bgImage;
